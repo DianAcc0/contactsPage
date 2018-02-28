@@ -1,0 +1,45 @@
+.filter-bg {
+  background: rgba(0,0,0,0.2);
+  color: white;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  z-index: 9999;
+  display: inline-block;
+  min-width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.filter-name-input {
+  border-radius: 30px;
+}
+
+.filter-bg .filter-tab-select {
+  border-radius: 30px;
+  text-align: left;
+  width: 100%;
+  max-width: 150px;
+}
+
+.filter-bg .filter-filter-button {
+  background: none;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid #588487;
+  width: 100%;
+  max-width: 100px;
+}
+
+.filter-bg .filter-contract-button{
+  background-color: #207f79;
+  border-radius: 30px;
+  color: white;
+  display: inline-flex;
+}
+
+.filter-bg .filter-drawcircle {
+  padding: 1px 6px 1px 6px;
+  background-color: #1b6662;
+  border-radius: 100%;
+  max-width: 30px;
+}

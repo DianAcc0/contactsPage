@@ -1,0 +1,36 @@
+<div class="filter-bg">
+  <div class="page-wrap">
+    <div class="row">
+      <div class="col-3 align-center">
+        <input type="text"
+               class="form-control filter-name-input"
+               placeholder="Filter text"
+               maxlength=50
+               [(ngModel)]="filterText"
+              >
+        </div>
+      <div class="col-6 align-center">
+        <select class="btn btn-default filter-tab-select"
+                [(ngModel)]="filterOption" >
+          <option *ngFor="let item of filterList" [value]="item.text">
+            {{item.text}}
+          </option>
+        </select>
+        &nbsp; &nbsp; &nbsp;
+        <input type="checkbox" [(ngModel)]="filterActive"> &nbsp; Show active &nbsp; &nbsp; &nbsp;
+        <button class="btn btn-default filter-filter-button semi-bold"
+                (click)="filterData()">
+          FILTER
+        </button>
+      </div>
+      <div class="col-3 align-center">
+        <button class="btn btn-default filter-contract-button semi-bold">
+          <div class="filter-drawcircle">
+            <i class="fa fa-plus"></i>
+          </div>
+          &nbsp;ADD NEW CONTRACT
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

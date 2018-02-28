@@ -1,0 +1,108 @@
+<div class="table-bg">
+  <div class="page-wrap">
+    <div class="row no-margin">
+      <div class="table-user-view-bg">
+        <div class="row align-center table-user-image">
+          <img src="{{imgPath}}" *ngIf="imgPath">
+        </div>
+        <div class="row">
+          <div class="col-5 table-user-column-1">
+           Name:
+          </div>
+          <div class="col-7 table-user-column-2">
+            {{userInfo.name}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5 table-user-column-1">
+            Surname:
+          </div>
+          <div class="col-7 table-user-column-2">
+            {{userInfo.surname}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5 table-user-column-1">
+            City:
+          </div>
+          <div class="col-7 table-user-column-2">
+            {{userInfo.city}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5 table-user-column-1">
+            Email:
+          </div>
+          <div class="col-7 table-user-column-2">
+            <a href="{{mailto}}">
+              {{userInfo.email}}
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5 table-user-column-1">
+            Phone:
+          </div>
+          <div class="col-7 table-user-column-2">
+            {{userInfo.phone}}
+          </div>
+        </div>
+      </div>
+      <div class="table-blank-space">
+      </div>
+      <div class="table-view-bg">
+        <table>
+          <thead>
+            <tr class="semi-bold">
+              <th class="table-active"></th>
+              <th class="table-name" (click)="sortDataByName()">
+                Name &nbsp; &nbsp; &nbsp; &nbsp;
+                <i class="fa fa-arrow-up" *ngIf="sortByName"></i>
+                <i class="fa fa-arrow-down" *ngIf="!sortByName"></i>
+              </th>
+              <th class="table-surname">Surname</th>
+              <th class="table-city">City</th>
+              <th class="table-email">Email</th>
+              <th class="table-phone">Phone</th>
+              <th class="table-actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of jsonList" (click)="showInformation(item)"
+                [ngClass]="isShownId == item.id ? 'table-tr-chosen' : ''">
+              <td class="table-active-icon">
+                <i class="fa fa-eye" *ngIf="item.active"></i>
+                <i class="fa fa-eye-slash" *ngIf="!item.active"></i>
+              </td>
+              <td>
+                {{item.name}}
+              </td>
+              <td>
+                {{item.surname}}
+              </td>
+              <td>
+                {{item.city}}
+              </td>
+              <td>
+                {{item.email}}
+              </td>
+              <td class="align-right">
+                {{item.phone}}
+              </td>
+              <td>
+                <button [ngClass]="isShownId == item.id ? 'table-action-button-click' : 'table-action-button'">
+                  <i class="fa fa-pencil"></i>
+                </button>
+                &nbsp;
+                <button [ngClass]="isShownId == item.id ? 'table-action-button-click' : 'table-action-button'">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="header-bg">
+  <div class="page-wrap">
+    <div class="row header-dropdown">
+      <button class="btn btn-default header-btn-login" type="submit"
+              (click)="menuClicked=!menuClicked">
+          <i class="fa fa-user"></i> &nbsp; {{userName}} {{userSurname}} &nbsp;&nbsp; <i class="fa fa-caret-down"></i>
+      </button>
+      <ul class="header-dropdown-menu" *ngIf="menuClicked">
+        <li *ngFor="let item of menuList" [value]="item.id" (click)="menuClicked = false">
+          <i [ngClass]="item.icon"></i> {{item.text}}
+        </li>
+      </ul>
+    </div>
+    <div class="row header-second-row">
+      <div class="col-3 align-center">
+        <img src="assets/logo.jpg" alt="MyContacts">
+      </div>
+      <div class="col-5 align-center">
+        <div class="header-button-fill semi-bold">
+          <button [ngClass]="chosenTab == 0 ? 'header-btn-hover line-right' : 'line-right'">DASHBOARD</button>
+          <button [ngClass]="chosenTab == 1 ? 'header-btn-hover line-right' : 'line-right'">CONTACTS</button>
+          <button [ngClass]="chosenTab == 2 ? 'header-btn-hover' : ''">NOTIFICATIONS</button>
+        </div>
+      </div>
+      <div class="col-3 align-center">
+        <div class="input-group">
+          <input type="text"
+                 class="form-control header-search-input"
+                 placeholder="Search"
+                 maxlength=30
+                  >
+          <span class="input-group-btn header-search-button-place">
+            <button class="btn btn-default header-search-button" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

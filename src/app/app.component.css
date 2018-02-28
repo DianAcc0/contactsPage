@@ -1,0 +1,13 @@
+.app-app-container {
+  min-height: 100%;
+  position: relative;
+  margin-bottom: -170px;
+}
+
+.app-app-container:after {
+  content: "";
+  display: block;
+}
+.app-footer, .app-app-container:after {
+  height: 170px;
+}
